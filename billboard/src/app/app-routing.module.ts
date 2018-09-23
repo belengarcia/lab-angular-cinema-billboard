@@ -1,11 +1,13 @@
+import { MovieItemComponent } from './components/movie/movie-item/movie-item.component';
+import { MovieListComponent } from './components/movie/movie-list/movie-list.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
-import { MovieComponent } from './components/movie/movie.component';
+
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
-  {path:'movie/:id', component: MovieComponent}
+  {path: '', redirectTo: 'movies', pathMatch: 'full'}, 
+  {path: 'movies', component: MovieListComponent},
+  {path:'movies/:id', component: MovieItemComponent}
 ];
 
 @NgModule({
